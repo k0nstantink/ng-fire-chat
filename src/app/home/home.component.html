@@ -1,0 +1,50 @@
+
+<div class="container my-container">
+<!-- row 1 -->
+<div class="row">
+    <div class="col-8 chat-input">
+      <input type="text" id="message" placeholder="Your chat message" [(ngModel)]="msg" #message>
+    </div>
+    <div class="col-4 submit-button">
+      <input type="submit" id="submit" (click)="onSendChatMessage(message.value, 'anon')" value="Send Now">
+    </div>
+</div>
+<!-- row 2 -->
+
+<div class="row align-items-center" *ngFor="let el of chatMessage | async; let i = index">
+    <div class="col-8 display-message"><div *ngIf="(editMsg == true) && (clickedId == el.id); then EditMessage; else ShowMessage"></div>
+    <ng-template #ShowMessage>
+        <p id="chat-message">
+            {{el.user}} - {{ el.timestamp | date: 'medium'}}
+            <br/>
+            {{ el.message }}
+        </p>
+      </ng-template>
+    
+    <ng-template #EditMessage>
+    <p id="chat-message">
+        {{ el.timestamp | date: 'medium'}}
+        <br/>
+    <input id="edit-message" type="text" size="50" value="{{ el.message}}" #msgval>
+    
+    <button class="button btn-primary" (click)="editMessage(el.id, msgval.value)">Confirm </button>
+    </p>
+   
+    </ng-template>
+  </div>
+ 
+
+      <div class="col-4 display-buttons">
+        <button class="button btn-danger btn-lg" (click)="onDeleteMessage(el.id)">delete</button>
+        <button class="button btn-success btn-lg" (click)="onEditMessage(el.id)">edit</button>
+      </div>
+</div>
+
+</div>
+
+
+
+
+
+
+

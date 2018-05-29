@@ -1,0 +1,71 @@
+.my-container {
+    background: #EBF2F2;
+    width: 100%;
+}
+
+.chat-input {
+    width: 100%;
+    background: #384445;
+    color: rgb(172, 172, 148);
+    padding: 50px;
+    float:left;
+}
+
+#message {
+    background: #384445;
+    color: #00A8B6;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    font-size: 1.6em;
+    font-weight: 300;
+    float: left;
+}
+
+#chat-message {
+ margin: 0;
+ font-size: 1.2em;
+ font-weight: 300;
+}
+
+#edit-message {
+    background: #fff;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+#submit {
+    background: #00A8B6;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 1.2em;
+    font-weight: 300;
+    
+}
+
+.submit-button {
+    width: 100%;
+    background: #00A8B6;
+    padding: 50px;
+    cursor: pointer;
+    text-align:center;
+    
+}
+
+.display-message {
+    background: white;
+    padding: 50px 25px;
+    border-left: 6px solid blue;
+    margin-bottom: 5px;
+   
+}
+
+.display-buttons {
+    padding: 50px 25px;
+    margin-bottom: 5px;
+}
+
