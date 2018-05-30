@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { data } from '../fruit-model';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { IChat } from '../IChat';
@@ -25,9 +24,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.chatMessage = this.dataService.chatMessages;
-
   }
 
   onSendChatMessage( message: string, user: string) {
@@ -42,9 +39,6 @@ export class HomeComponent implements OnInit {
   onEditMessage(id: string, msg: string) {
     this.editMsg = true;
     this.clickedId = id;
-    // this.dataService.updateMessage(id, msg);
-
-    console.log(this.editMsg, this.clickedId);
   }
   editMessage(id: string, message: string) {
     this.dataService.chatCollection.doc(id).update(
@@ -52,7 +46,6 @@ export class HomeComponent implements OnInit {
         message
       }
     ).then(done => this.editMsg = false);
-    console.log(this.editMsg);
   }
 
 }
